@@ -5,9 +5,9 @@
   <subtitle>当你凝视深渊,深渊也在凝视你。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://bestqliang.com/"/>
+  <link href="https://blog.bestqliang.com/"/>
   <updated>2020-03-23T12:49:49.663Z</updated>
-  <id>https://bestqliang.com/</id>
+  <id>https://blog.bestqliang.com/</id>
   
   <author>
     <name>Qliang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>深入理解Java虚拟机(2)之十六-线程安全与锁优化</title>
-    <link href="https://bestqliang.com/2019/07/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-liu-xian-cheng-an-quan-yu-suo-you-hua/"/>
-    <id>https://bestqliang.com/2019/07/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-liu-xian-cheng-an-quan-yu-suo-you-hua/</id>
+    <link href="https://blog.bestqliang.com/2019/07/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-liu-xian-cheng-an-quan-yu-suo-you-hua/"/>
+    <id>https://blog.bestqliang.com/2019/07/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-liu-xian-cheng-an-quan-yu-suo-you-hua/</id>
     <published>2019-07-15T12:35:19.000Z</published>
     <updated>2020-03-23T12:49:49.663Z</updated>
     
@@ -36,21 +36,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之十五-Java内存模型与线程</title>
-    <link href="https://bestqliang.com/2019/07/13/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-wu-java-nei-cun-mo-xing-yu-xian-cheng/"/>
-    <id>https://bestqliang.com/2019/07/13/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-wu-java-nei-cun-mo-xing-yu-xian-cheng/</id>
+    <link href="https://blog.bestqliang.com/2019/07/13/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-wu-java-nei-cun-mo-xing-yu-xian-cheng/"/>
+    <id>https://blog.bestqliang.com/2019/07/13/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-wu-java-nei-cun-mo-xing-yu-xian-cheng/</id>
     <published>2019-07-13T11:20:57.000Z</published>
     <updated>2020-03-23T12:49:49.660Z</updated>
     
@@ -67,21 +67,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之十四-晚期(运行期)优化</title>
-    <link href="https://bestqliang.com/2019/07/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-si-wan-qi-yun-xing-qi-you-hua/"/>
-    <id>https://bestqliang.com/2019/07/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-si-wan-qi-yun-xing-qi-you-hua/</id>
+    <link href="https://blog.bestqliang.com/2019/07/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-si-wan-qi-yun-xing-qi-you-hua/"/>
+    <id>https://blog.bestqliang.com/2019/07/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-si-wan-qi-yun-xing-qi-you-hua/</id>
     <published>2019-07-12T15:19:34.000Z</published>
     <updated>2020-03-23T12:49:49.664Z</updated>
     
@@ -98,21 +98,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之十三-虚拟机字节码执行引擎</title>
-    <link href="https://bestqliang.com/2019/07/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-san-xu-ni-ji-zi-jie-ma-zhi-xing-yin-qing/"/>
-    <id>https://bestqliang.com/2019/07/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-san-xu-ni-ji-zi-jie-ma-zhi-xing-yin-qing/</id>
+    <link href="https://blog.bestqliang.com/2019/07/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-san-xu-ni-ji-zi-jie-ma-zhi-xing-yin-qing/"/>
+    <id>https://blog.bestqliang.com/2019/07/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-san-xu-ni-ji-zi-jie-ma-zhi-xing-yin-qing/</id>
     <published>2019-07-10T13:23:19.000Z</published>
     <updated>2020-03-23T12:49:49.657Z</updated>
     
@@ -129,21 +129,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之十二-类加载器</title>
-    <link href="https://bestqliang.com/2019/07/06/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-er-lei-jia-zai-qi/"/>
-    <id>https://bestqliang.com/2019/07/06/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-er-lei-jia-zai-qi/</id>
+    <link href="https://blog.bestqliang.com/2019/07/06/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-er-lei-jia-zai-qi/"/>
+    <id>https://blog.bestqliang.com/2019/07/06/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-er-lei-jia-zai-qi/</id>
     <published>2019-07-06T12:14:30.000Z</published>
     <updated>2020-03-23T12:49:49.658Z</updated>
     
@@ -161,21 +161,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之十一-虚拟机类加载机制</title>
-    <link href="https://bestqliang.com/2019/07/04/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-yi-xu-ni-ji-lei-jia-zai-ji-zhi/"/>
-    <id>https://bestqliang.com/2019/07/04/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-yi-xu-ni-ji-lei-jia-zai-ji-zhi/</id>
+    <link href="https://blog.bestqliang.com/2019/07/04/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-yi-xu-ni-ji-lei-jia-zai-ji-zhi/"/>
+    <id>https://blog.bestqliang.com/2019/07/04/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-yi-xu-ni-ji-lei-jia-zai-ji-zhi/</id>
     <published>2019-07-04T10:14:19.000Z</published>
     <updated>2020-03-23T12:49:49.656Z</updated>
     
@@ -192,21 +192,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之十-类文件结构</title>
-    <link href="https://bestqliang.com/2019/07/02/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-lei-wen-jian-jie-gou/"/>
-    <id>https://bestqliang.com/2019/07/02/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-lei-wen-jian-jie-gou/</id>
+    <link href="https://blog.bestqliang.com/2019/07/02/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-lei-wen-jian-jie-gou/"/>
+    <id>https://blog.bestqliang.com/2019/07/02/shen-ru-li-jie-java-xu-ni-ji-2-zhi-shi-lei-wen-jian-jie-gou/</id>
     <published>2019-07-02T11:29:10.000Z</published>
     <updated>2020-03-23T12:49:49.655Z</updated>
     
@@ -223,21 +223,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之九-内存分配与回收策略</title>
-    <link href="https://bestqliang.com/2019/07/01/shen-ru-li-jie-java-xu-ni-ji-2-zhi-jiu-nei-cun-fen-pei-yu-hui-shou-ce-lue/"/>
-    <id>https://bestqliang.com/2019/07/01/shen-ru-li-jie-java-xu-ni-ji-2-zhi-jiu-nei-cun-fen-pei-yu-hui-shou-ce-lue/</id>
+    <link href="https://blog.bestqliang.com/2019/07/01/shen-ru-li-jie-java-xu-ni-ji-2-zhi-jiu-nei-cun-fen-pei-yu-hui-shou-ce-lue/"/>
+    <id>https://blog.bestqliang.com/2019/07/01/shen-ru-li-jie-java-xu-ni-ji-2-zhi-jiu-nei-cun-fen-pei-yu-hui-shou-ce-lue/</id>
     <published>2019-07-01T12:09:38.000Z</published>
     <updated>2020-03-23T12:49:49.648Z</updated>
     
@@ -254,21 +254,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之八-垃圾收集器</title>
-    <link href="https://bestqliang.com/2019/06/29/shen-ru-li-jie-java-xu-ni-ji-2-zhi-ba-la-ji-shou-ji-qi/"/>
-    <id>https://bestqliang.com/2019/06/29/shen-ru-li-jie-java-xu-ni-ji-2-zhi-ba-la-ji-shou-ji-qi/</id>
+    <link href="https://blog.bestqliang.com/2019/06/29/shen-ru-li-jie-java-xu-ni-ji-2-zhi-ba-la-ji-shou-ji-qi/"/>
+    <id>https://blog.bestqliang.com/2019/06/29/shen-ru-li-jie-java-xu-ni-ji-2-zhi-ba-la-ji-shou-ji-qi/</id>
     <published>2019-06-29T14:01:20.000Z</published>
     <updated>2020-03-23T12:49:49.652Z</updated>
     
@@ -285,21 +285,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之七-垃圾收集算法</title>
-    <link href="https://bestqliang.com/2019/06/23/shen-ru-li-jie-java-xu-ni-ji-2-zhi-qi-la-ji-shou-ji-suan-fa/"/>
-    <id>https://bestqliang.com/2019/06/23/shen-ru-li-jie-java-xu-ni-ji-2-zhi-qi-la-ji-shou-ji-suan-fa/</id>
+    <link href="https://blog.bestqliang.com/2019/06/23/shen-ru-li-jie-java-xu-ni-ji-2-zhi-qi-la-ji-shou-ji-suan-fa/"/>
+    <id>https://blog.bestqliang.com/2019/06/23/shen-ru-li-jie-java-xu-ni-ji-2-zhi-qi-la-ji-shou-ji-suan-fa/</id>
     <published>2019-06-23T14:19:26.000Z</published>
     <updated>2020-03-23T12:49:49.646Z</updated>
     
@@ -316,21 +316,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之六-HotSpot的算法实现</title>
-    <link href="https://bestqliang.com/2019/06/21/shen-ru-li-jie-java-xu-ni-ji-2-zhi-liu-hotspot-de-suan-fa-shi-xian/"/>
-    <id>https://bestqliang.com/2019/06/21/shen-ru-li-jie-java-xu-ni-ji-2-zhi-liu-hotspot-de-suan-fa-shi-xian/</id>
+    <link href="https://blog.bestqliang.com/2019/06/21/shen-ru-li-jie-java-xu-ni-ji-2-zhi-liu-hotspot-de-suan-fa-shi-xian/"/>
+    <id>https://blog.bestqliang.com/2019/06/21/shen-ru-li-jie-java-xu-ni-ji-2-zhi-liu-hotspot-de-suan-fa-shi-xian/</id>
     <published>2019-06-21T13:40:30.000Z</published>
     <updated>2020-03-23T12:49:49.654Z</updated>
     
@@ -347,21 +347,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之五-对象的死亡判定</title>
-    <link href="https://bestqliang.com/2019/06/20/shen-ru-li-jie-java-xu-ni-ji-2-zhi-wu-dui-xiang-de-si-wang-pan-ding/"/>
-    <id>https://bestqliang.com/2019/06/20/shen-ru-li-jie-java-xu-ni-ji-2-zhi-wu-dui-xiang-de-si-wang-pan-ding/</id>
+    <link href="https://blog.bestqliang.com/2019/06/20/shen-ru-li-jie-java-xu-ni-ji-2-zhi-wu-dui-xiang-de-si-wang-pan-ding/"/>
+    <id>https://blog.bestqliang.com/2019/06/20/shen-ru-li-jie-java-xu-ni-ji-2-zhi-wu-dui-xiang-de-si-wang-pan-ding/</id>
     <published>2019-06-20T10:39:30.000Z</published>
     <updated>2020-03-23T12:49:49.651Z</updated>
     
@@ -378,21 +378,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之四-OutOfMemoryError异常实战</title>
-    <link href="https://bestqliang.com/2019/06/17/shen-ru-li-jie-java-xu-ni-ji-2-zhi-si-outofmemoryerror-yi-chang-shi-zhan/"/>
-    <id>https://bestqliang.com/2019/06/17/shen-ru-li-jie-java-xu-ni-ji-2-zhi-si-outofmemoryerror-yi-chang-shi-zhan/</id>
+    <link href="https://blog.bestqliang.com/2019/06/17/shen-ru-li-jie-java-xu-ni-ji-2-zhi-si-outofmemoryerror-yi-chang-shi-zhan/"/>
+    <id>https://blog.bestqliang.com/2019/06/17/shen-ru-li-jie-java-xu-ni-ji-2-zhi-si-outofmemoryerror-yi-chang-shi-zhan/</id>
     <published>2019-06-17T10:39:30.000Z</published>
     <updated>2020-03-23T12:49:49.665Z</updated>
     
@@ -410,21 +410,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之三-HotSpot虚拟机对象探秘</title>
-    <link href="https://bestqliang.com/2019/06/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-san-hotspot-xu-ni-ji-dui-xiang-tan-mi/"/>
-    <id>https://bestqliang.com/2019/06/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-san-hotspot-xu-ni-ji-dui-xiang-tan-mi/</id>
+    <link href="https://blog.bestqliang.com/2019/06/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-san-hotspot-xu-ni-ji-dui-xiang-tan-mi/"/>
+    <id>https://blog.bestqliang.com/2019/06/15/shen-ru-li-jie-java-xu-ni-ji-2-zhi-san-hotspot-xu-ni-ji-dui-xiang-tan-mi/</id>
     <published>2019-06-15T12:20:30.000Z</published>
     <updated>2020-03-23T12:49:49.647Z</updated>
     
@@ -441,21 +441,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之二-运行时数据区域</title>
-    <link href="https://bestqliang.com/2019/06/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-er-yun-xing-shi-shu-ju-qu-yu/"/>
-    <id>https://bestqliang.com/2019/06/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-er-yun-xing-shi-shu-ju-qu-yu/</id>
+    <link href="https://blog.bestqliang.com/2019/06/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-er-yun-xing-shi-shu-ju-qu-yu/"/>
+    <id>https://blog.bestqliang.com/2019/06/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-er-yun-xing-shi-shu-ju-qu-yu/</id>
     <published>2019-06-12T12:19:21.000Z</published>
     <updated>2020-03-23T12:49:49.649Z</updated>
     
@@ -472,21 +472,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>深入理解Java虚拟机(2)之一-macOS下编译openjdk10</title>
-    <link href="https://bestqliang.com/2019/06/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-yi-macos-xia-bian-yi-openjdk10/"/>
-    <id>https://bestqliang.com/2019/06/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-yi-macos-xia-bian-yi-openjdk10/</id>
+    <link href="https://blog.bestqliang.com/2019/06/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-yi-macos-xia-bian-yi-openjdk10/"/>
+    <id>https://blog.bestqliang.com/2019/06/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-yi-macos-xia-bian-yi-openjdk10/</id>
     <published>2019-06-10T11:33:21.000Z</published>
     <updated>2020-03-23T12:49:49.645Z</updated>
     
@@ -506,21 +506,21 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="JVM" scheme="https://bestqliang.com/tags/JVM/"/>
+      <category term="JVM" scheme="https://blog.bestqliang.com/tags/JVM/"/>
     
-      <category term="虚拟机" scheme="https://bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+      <category term="虚拟机" scheme="https://blog.bestqliang.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>SpringMVC</title>
-    <link href="https://bestqliang.com/2019/03/26/springmvc/"/>
-    <id>https://bestqliang.com/2019/03/26/springmvc/</id>
+    <link href="https://blog.bestqliang.com/2019/03/26/springmvc/"/>
+    <id>https://blog.bestqliang.com/2019/03/26/springmvc/</id>
     <published>2019-03-26T14:19:53.000Z</published>
     <updated>2020-03-23T12:49:49.596Z</updated>
     
@@ -537,23 +537,23 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="技术" scheme="https://bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="技术" scheme="https://blog.bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Spring" scheme="https://bestqliang.com/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.bestqliang.com/tags/Spring/"/>
     
-      <category term="Spring实战" scheme="https://bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
+      <category term="Spring实战" scheme="https://blog.bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
   <entry>
     <title>bean的作用域</title>
-    <link href="https://bestqliang.com/2019/03/26/bean-de-zuo-yong-yu/"/>
-    <id>https://bestqliang.com/2019/03/26/bean-de-zuo-yong-yu/</id>
+    <link href="https://blog.bestqliang.com/2019/03/26/bean-de-zuo-yong-yu/"/>
+    <id>https://blog.bestqliang.com/2019/03/26/bean-de-zuo-yong-yu/</id>
     <published>2019-03-26T13:31:30.000Z</published>
     <updated>2020-03-23T12:49:49.602Z</updated>
     
@@ -570,23 +570,23 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="技术" scheme="https://bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="技术" scheme="https://blog.bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Spring" scheme="https://bestqliang.com/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.bestqliang.com/tags/Spring/"/>
     
-      <category term="Spring实战" scheme="https://bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
+      <category term="Spring实战" scheme="https://blog.bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
   <entry>
     <title>bean的生命周期</title>
-    <link href="https://bestqliang.com/2019/03/26/bean-de-sheng-ming-zhou-qi/"/>
-    <id>https://bestqliang.com/2019/03/26/bean-de-sheng-ming-zhou-qi/</id>
+    <link href="https://blog.bestqliang.com/2019/03/26/bean-de-sheng-ming-zhou-qi/"/>
+    <id>https://blog.bestqliang.com/2019/03/26/bean-de-sheng-ming-zhou-qi/</id>
     <published>2019-03-26T13:11:53.000Z</published>
     <updated>2020-03-23T12:49:49.603Z</updated>
     
@@ -603,23 +603,23 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="技术" scheme="https://bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="技术" scheme="https://blog.bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Spring" scheme="https://bestqliang.com/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.bestqliang.com/tags/Spring/"/>
     
-      <category term="Spring实战" scheme="https://bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
+      <category term="Spring实战" scheme="https://blog.bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
   <entry>
     <title>装配Bean</title>
-    <link href="https://bestqliang.com/2019/03/25/zhuang-pei-bean/"/>
-    <id>https://bestqliang.com/2019/03/25/zhuang-pei-bean/</id>
+    <link href="https://blog.bestqliang.com/2019/03/25/zhuang-pei-bean/"/>
+    <id>https://blog.bestqliang.com/2019/03/25/zhuang-pei-bean/</id>
     <published>2019-03-25T11:12:50.000Z</published>
     <updated>2020-03-23T12:49:49.668Z</updated>
     
@@ -636,16 +636,16 @@
     </summary>
     
     
-      <category term="Java" scheme="https://bestqliang.com/categories/Java/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/categories/Java/"/>
     
     
-      <category term="技术" scheme="https://bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
+      <category term="Java" scheme="https://blog.bestqliang.com/tags/Java/"/>
     
-      <category term="Java" scheme="https://bestqliang.com/tags/Java/"/>
+      <category term="技术" scheme="https://blog.bestqliang.com/tags/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="Spring" scheme="https://bestqliang.com/tags/Spring/"/>
+      <category term="Spring" scheme="https://blog.bestqliang.com/tags/Spring/"/>
     
-      <category term="Spring实战" scheme="https://bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
+      <category term="Spring实战" scheme="https://blog.bestqliang.com/tags/Spring%E5%AE%9E%E6%88%98/"/>
     
   </entry>
   
