@@ -1,0 +1,1603 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="深入理解Java虚拟机(2)之一-macOS下编译openjdk10, 秦梁的小站">
+    <meta name="description" content="及时止损">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120234237-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-120234237-1');
+</script>
+
+
+    <title>深入理解Java虚拟机(2)之一-macOS下编译openjdk10 | 秦梁的小站</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="秦梁的小站" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">秦梁的小站</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">秦梁的小站</div>
+        <div class="logo-desc">
+            
+            及时止损
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/qliang0816" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/qliang0816" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">深入理解Java虚拟机(2)之一-macOS下编译openjdk10</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/JVM/">
+                                <span class="chip bg-color">JVM</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                <span class="chip bg-color">虚拟机</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Java/" class="post-category">
+                                Java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-06-10
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p><strong>==因为电脑系统版本和软件版本都比较高，在编译jdk7和jdk8的时候出现各种各样的问题，编译jdk10一次就ok了。==</strong></p>
+</blockquote>
+<h2 id="编译openjdk10"><a href="#编译openjdk10" class="headerlink" title="编译openjdk10"></a>编译openjdk10</h2><h3 id="编译环境"><a href="#编译环境" class="headerlink" title="编译环境"></a>编译环境</h3><ul>
+<li>系统环境 ：macOS Mojave 10.14.3</li>
+<li>编译器 ：clang</li>
+<li>openJdk ：openjdk10</li>
+<li>boostrap JDK ：oracle jdk1.8.0_202</li>
+<li>xcode version ：9.4.1(xcode 10<code>libc++</code>替换了<code>stdlibc++</code>)</li>
+<li>ant version ：1.10.5</li>
+<li>freetype 2.10.0</li>
+<li>ccache 3.7.1</li>
+</ul>
+<hr>
+<h3 id="获取源码"><a href="#获取源码" class="headerlink" title="获取源码"></a>获取源码</h3><blockquote>
+<p><code>Mercurial</code>代码管理工具从仓库下载</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">brew <span class="token function">install</span> mercurial
+<span class="token function">hg</span> clone http://hg.openjdk.java.net/jdk10/jdk10/ jdk10
+<span class="token function">cd</span> jdk10
+<span class="token function">chmod</span> 755 get_source.sh
+./get_source.sh</code></pre>
+<hr>
+<h3 id="配置环境变量env-sh"><a href="#配置环境变量env-sh" class="headerlink" title="配置环境变量env.sh"></a>配置环境变量<code>env.sh</code></h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 设定语言选项，必须设置</span>
+<span class="token function">export</span> LANG<span class="token operator">=</span>C
+<span class="token comment" spellcheck="true"># Mac平台，C编译器不再是GCC，是clang</span>
+<span class="token function">export</span> CC<span class="token operator">=</span>gcc
+<span class="token comment" spellcheck="true"># 跳过clang的一些严格的语法检查，不然会将N多的警告作为Error</span>
+<span class="token function">export</span> COMPILER_WARNINGS_FATAL<span class="token operator">=</span>false
+<span class="token comment" spellcheck="true"># 链接时使用的参数</span>
+<span class="token function">export</span> LFLAGS<span class="token operator">=</span><span class="token string">'-Xlinker -lstdc++'</span>
+<span class="token comment" spellcheck="true"># 是否使用clang</span>
+<span class="token function">export</span> USE_CLANG<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 使用64位数据模型</span>
+<span class="token function">export</span> LP64<span class="token operator">=</span>1
+<span class="token comment" spellcheck="true"># 告诉编译平台是64位，不然会按32位来编译</span>
+<span class="token function">export</span> ARCH_DATA_MODEL<span class="token operator">=</span>64
+<span class="token comment" spellcheck="true"># 允许自动下载依赖</span>
+<span class="token function">export</span> ALLOW_DOWNLOADS<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 并行编译的线程数</span>
+<span class="token function">export</span> HOTSPOT_BUILD_JOBS<span class="token operator">=</span>4
+<span class="token comment" spellcheck="true"># 已过时</span>
+<span class="token comment" spellcheck="true"># export ALT_PARALLEL_COMPILE_JOBS=4</span>
+<span class="token comment" spellcheck="true"># 是否跳过与先前版本的比较</span>
+<span class="token function">export</span> SKIP_COMPARE_IMAGES<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 是否使用预编译头文件，加快编译速度</span>
+<span class="token function">export</span> USE_PRECOMPILED_HEADER<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 是否使用增量编译</span>
+<span class="token function">export</span> INCREMENTAL_BUILD<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 编译内容</span>
+<span class="token function">export</span> BUILD_LANGTOOLS<span class="token operator">=</span>true
+<span class="token function">export</span> BUILD_JAXP<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_JAXWS<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_CORBA<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_HOTSPOT<span class="token operator">=</span>true
+<span class="token function">export</span> BUILD_JDK<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 编译版本</span>
+<span class="token function">export</span> SKIP_DEBUG_BUILD<span class="token operator">=</span>true
+<span class="token function">export</span> SKIP_FASTDEBUG_BUILD<span class="token operator">=</span>false
+<span class="token function">export</span> DEBUG_NAME<span class="token operator">=</span>debug
+<span class="token comment" spellcheck="true"># 避开javaws和浏览器Java插件之类的部分的build</span>
+<span class="token function">export</span> BUILD_DEPLOY<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_INSTALL<span class="token operator">=</span>false
+<span class="token comment" spellcheck="true"># 加上产生调试信息时需要的 objcopy</span>
+<span class="token function">export</span> OBJCOPY<span class="token operator">=</span>gobjcopy</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> env.sh
+
+<span class="token comment" spellcheck="true"># configure</span>
+<span class="token function">bash</span> ./configure \
+    --with-target-bits<span class="token operator">=</span>64 \
+    --with-debug-level<span class="token operator">=</span>slowdebug \
+    --disable-warnings-as-errors \
+    --with-freetype<span class="token operator">=</span>/usr/local/Cellar/freetype/2.10.0/ \
+    --enable-ccache</code></pre>
+<p>完成后出现以下内容：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
+The existing configuration has been successfully updated <span class="token keyword">in</span>
+/Users/qliang/Documents/code/openjdk/jdk10/build/macosx-x86_64-normal-server-slowdebug
+using configure arguments <span class="token string">'--with-target-bits=64 --with-debug-level=slowdebug --disable-warnings-as-errors --with-freetype=/usr/local/Cellar/freetype/2.10.0/ --enable-ccache'</span><span class="token keyword">.</span>
+
+Configuration summary:
+* Debug level:    slowdebug
+* HS debug level: debug
+* JDK variant:    normal
+* JVM variants:   server
+* OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
+* Version string: 10-internal+0-adhoc.qliang.jdk10 <span class="token punctuation">(</span>10-internal<span class="token punctuation">)</span>
+
+Tools summary:
+* Boot JDK:       java version <span class="token string">"1.8.0_202"</span> Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment <span class="token punctuation">(</span>build 1.8.0_202-b08<span class="token punctuation">)</span> Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> 64-Bit Server VM <span class="token punctuation">(</span>build 25.202-b08, mixed mode<span class="token punctuation">)</span>  <span class="token punctuation">(</span>at /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home<span class="token punctuation">)</span>
+* Toolchain:      clang <span class="token punctuation">(</span>clang/LLVM from Xcode 10.2.1<span class="token punctuation">)</span>
+* C Compiler:     Version 10.0.1 <span class="token punctuation">(</span>at /usr/bin/clang<span class="token punctuation">)</span>
+* C++ Compiler:   Version 10.0.1 <span class="token punctuation">(</span>at /usr/bin/clang++<span class="token punctuation">)</span>
+
+Build performance summary:
+* Cores to use:   4
+* Memory limit:   16384 MB
+* ccache status:  Active <span class="token punctuation">(</span>3.7.1<span class="token punctuation">)</span>
+
+WARNING: The result of this configuration has overridden an older
+configuration. You *should* run <span class="token string">'make clean'</span> to <span class="token function">make</span> sure you get a
+proper build. Failure to <span class="token keyword">do</span> so might result <span class="token keyword">in</span> strange build problems.</code></pre>
+<h3 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h3><pre><code># 编译
+make clean
+make all</code></pre><p>成功出现以下信息：</p>
+<pre><code>Finished building target 'default (exploded-image)' in configuration 'macosx-x86_64-normal-server-slowdebug'</code></pre><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p><code>./build/macosx-x86_64-normal-server-slowdebug/jdk/bin/java -version</code></p>
+<p>出现：</p>
+<pre><code>openjdk version "10-internal"
+OpenJDK Runtime Environment (slowdebug build 10-internal+0-adhoc.qliang.jdk10)
+OpenJDK 64-Bit Server VM (slowdebug build 10-internal+0-adhoc.qliang.jdk10, mixed mode)</code></pre><hr>
+<h2 id="编译openjdk8"><a href="#编译openjdk8" class="headerlink" title="编译openjdk8"></a>编译openjdk8</h2><h3 id="编译环境-1"><a href="#编译环境-1" class="headerlink" title="编译环境"></a>编译环境</h3><ul>
+<li>系统环境 ：macOS Mojave 10.14.3</li>
+<li>编译器 ：clang</li>
+<li>openJdk ：openjdk8</li>
+<li>boostrap JDK ：oracle jdk1.8.0_202</li>
+<li>xcode version ：10.1 (10B61)</li>
+<li>ant version ：1.10.5</li>
+<li>XQuartz 2.7.11</li>
+</ul>
+<hr>
+<h3 id="获取源码-1"><a href="#获取源码-1" class="headerlink" title="获取源码"></a>获取源码</h3><blockquote>
+<p><code>Mercurial</code>代码管理工具从仓库下载</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">brew <span class="token function">install</span> mercurial
+<span class="token function">hg</span> clone http://hg.openjdk.java.net/jdk8u/jdk8u-dev/ JDK8u
+<span class="token function">cd</span> JDK8
+<span class="token function">chmod</span> 755 get_source.sh
+./get_source.sh</code></pre>
+<hr>
+<h3 id="配置环境变量env-sh-1"><a href="#配置环境变量env-sh-1" class="headerlink" title="配置环境变量env.sh"></a>配置环境变量<code>env.sh</code></h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 设定语言选项，必须设置</span>
+<span class="token function">export</span> LANG<span class="token operator">=</span>C
+<span class="token comment" spellcheck="true"># Mac平台，C编译器不再是GCC，是clang</span>
+<span class="token function">export</span> CC<span class="token operator">=</span>gcc
+<span class="token comment" spellcheck="true"># 跳过clang的一些严格的语法检查，不然会将N多的警告作为Error</span>
+<span class="token function">export</span> COMPILER_WARNINGS_FATAL<span class="token operator">=</span>false
+<span class="token comment" spellcheck="true"># 链接时使用的参数</span>
+<span class="token function">export</span> LFLAGS<span class="token operator">=</span><span class="token string">'-Xlinker -lstdc++'</span>
+<span class="token comment" spellcheck="true"># 是否使用clang</span>
+<span class="token function">export</span> USE_CLANG<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 使用64位数据模型</span>
+<span class="token function">export</span> LP64<span class="token operator">=</span>1
+<span class="token comment" spellcheck="true"># 告诉编译平台是64位，不然会按32位来编译</span>
+<span class="token function">export</span> ARCH_DATA_MODEL<span class="token operator">=</span>64
+<span class="token comment" spellcheck="true"># 允许自动下载依赖</span>
+<span class="token function">export</span> ALLOW_DOWNLOADS<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 并行编译的线程数</span>
+<span class="token function">export</span> HOTSPOT_BUILD_JOBS<span class="token operator">=</span>4
+<span class="token function">export</span> ALT_PARALLEL_COMPILE_JOBS<span class="token operator">=</span>4
+<span class="token comment" spellcheck="true"># 是否跳过与先前版本的比较</span>
+<span class="token function">export</span> SKIP_COMPARE_IMAGES<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 是否使用预编译头文件，加快编译速度</span>
+<span class="token function">export</span> USE_PRECOMPILED_HEADER<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 是否使用增量编译</span>
+<span class="token function">export</span> INCREMENTAL_BUILD<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 编译内容</span>
+<span class="token function">export</span> BUILD_LANGTOOLS<span class="token operator">=</span>true
+<span class="token function">export</span> BUILD_JAXP<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_JAXWS<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_CORBA<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_HOTSPOT<span class="token operator">=</span>true
+<span class="token function">export</span> BUILD_JDK<span class="token operator">=</span>true
+<span class="token comment" spellcheck="true"># 编译版本</span>
+<span class="token function">export</span> SKIP_DEBUG_BUILD<span class="token operator">=</span>true
+<span class="token function">export</span> SKIP_FASTDEBUG_BUILD<span class="token operator">=</span>false
+<span class="token function">export</span> DEBUG_NAME<span class="token operator">=</span>debug
+<span class="token comment" spellcheck="true"># 避开javaws和浏览器Java插件之类的部分的build</span>
+<span class="token function">export</span> BUILD_DEPLOY<span class="token operator">=</span>false
+<span class="token function">export</span> BUILD_INSTALL<span class="token operator">=</span>false
+<span class="token comment" spellcheck="true"># 加上产生调试信息时需要的 objcopy</span>
+<span class="token function">export</span> OBJCOPY<span class="token operator">=</span>gobjcopy</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> env.sh
+
+<span class="token comment" spellcheck="true"># configure</span>
+<span class="token function">bash</span> ./configure \
+    --with-target-bits<span class="token operator">=</span>64 \
+    --with-debug-level<span class="token operator">=</span>slowdebug \
+    --disable-warnings-as-errors \
+    --enable-debug-symbols \
+    ZIP_DEBUGINFO_FILES<span class="token operator">=</span>0</code></pre>
+<p>执行成功出现以下内容</p>
+<pre class=" language-bash"><code class="language-bash">Configuration summary:
+* Debug level:    slowdebug
+* JDK variant:    normal
+* JVM variants:   server
+* OpenJDK target: OS: macosx, CPU architecture: x86, address length: 64
+
+Tools summary:
+* Boot JDK:       java version <span class="token string">"1.8.0_202"</span> Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment <span class="token punctuation">(</span>build 1.8.0_202-b08<span class="token punctuation">)</span> Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> 64-Bit Server VM <span class="token punctuation">(</span>build 25.202-b08, mixed mode<span class="token punctuation">)</span>  <span class="token punctuation">(</span>at /Library/Java/JavaVirtualMachines/jdk1.8.0_202.jdk/Contents/Home<span class="token punctuation">)</span>
+* C Compiler:      version  <span class="token punctuation">(</span>at /usr/bin/gcc<span class="token punctuation">)</span>
+* C++ Compiler:    version  <span class="token punctuation">(</span>at /usr/bin/g++<span class="token punctuation">)</span>
+
+Build performance summary:
+* Cores to use:   2
+* Memory limit:   16384 MB
+* ccache status:  not installed <span class="token punctuation">(</span>consider installing<span class="token punctuation">)</span></code></pre>
+<p>执行<code>make</code></p>
+<hr>
+<h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
+<li><code>configure: error: GCC compiler is required. Try setting --with-tools-dir.</code></li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>修改 <code>common/autoconf/generated-configure.sh</code>，</p>
+<p>搜索 <code>GCC compiler is required</code>，</p>
+<p>对应内容注释掉。</p>
+<ol start="2">
+<li><code>error: Xcode 4 is required to build JDK 8</code></li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>修改 <code>common/autoconf/generated-configure.sh</code>，</p>
+<p>搜索 <code>error: Xcode 4 is required to build JDK 8</code>，注释对应5行</p>
+<p>两行内容注释掉。</p>
+<ol start="3">
+<li><code>error: invalid argument '-std=gnu++98' not allowed with 'C'</code></li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>修改 <code>common/autoconf/generated-configure.sh</code>，</p>
+<p>搜索 <code>-std=gnu++98</code>，注释</p>
+<p>两行内容注释掉</p>
+<p>2.</p>
+<pre class=" language-bash"><code class="language-bash">/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:367:27: error: friend declaration specifying a default argument must be a definition
+  inline friend relocInfo prefix_relocInfo<span class="token punctuation">(</span>int datalen <span class="token operator">=</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                          ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:462:18: error: friend declaration specifying a default argument must be the only declaration
+inline relocInfo prefix_relocInfo<span class="token punctuation">(</span>int datalen<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:367:27: note: previous declaration is here
+  inline friend relocInfo prefix_relocInfo<span class="token punctuation">(</span>int datalen <span class="token operator">=</span> 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                          ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:463:21: error: <span class="token string">'fits_into_immediate'</span> is a protected member of <span class="token string">'relocInfo'</span>
+  assert<span class="token punctuation">(</span>relocInfo::fits_into_immediate<span class="token punctuation">(</span>datalen<span class="token punctuation">)</span>, <span class="token string">"datalen in limits"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:375:15: note: declared protected here
+  static bool fits_into_immediate<span class="token punctuation">(</span>int data0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:464:59: error: <span class="token string">'RAW_BITS'</span> is a protected member of <span class="token string">'relocInfo'</span>
+  <span class="token keyword">return</span> relocInfo<span class="token punctuation">(</span>relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag <span class="token operator">|</span> datalen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                                          ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:272:23: note: declared protected here
+  enum RawBitsToken <span class="token punctuation">{</span> RAW_BITS <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                      ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:464:10: error: calling a protected constructor of class <span class="token string">'relocInfo'</span>
+  <span class="token keyword">return</span> relocInfo<span class="token punctuation">(</span>relocInfo::data_prefix_tag, relocInfo::RAW_BITS, relocInfo::datalen_tag <span class="token operator">|</span> datalen<span class="token punctuation">)</span><span class="token punctuation">;</span>
+         ^
+/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/code/relocInfo.hpp:273:3: note: declared protected here
+  relocInfo<span class="token punctuation">(</span>relocType type, RawBitsToken ignore, int bits<span class="token punctuation">)</span>
+  ^</code></pre>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>修改 <code>hotspot/src/share/vm/code/relocInfo.hpp</code></p>
+<p>367行 <code>int datalen = 0</code> 改为 <code>int datalen</code></p>
+<p>462行 <code>int datalen</code> 改为 <code>int datalen = 0</code></p>
+<ol start="3">
+<li><pre class=" language-bash"><code class="language-bash">/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/opto/loopPredicate.cpp:775:73: error: ordered comparison between pointer and zero <span class="token punctuation">(</span><span class="token string">'const TypeInt *'</span> and <span class="token string">'int'</span><span class="token punctuation">)</span>
+   assert<span class="token punctuation">(</span>rng-<span class="token operator">></span>Opcode<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> Op_LoadRange <span class="token operator">||</span> _igvn.type<span class="token punctuation">(</span>rng<span class="token punctuation">)</span>-<span class="token operator">></span>is_int<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> 0, <span class="token string">"must be"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p><code>_igvn.type(rng)-&gt;is_int() &gt;= 0</code> 改为 <code>_igvn.type(rng)-&gt;is_int()-&gt;_lo &gt;= 0</code></p>
+<ol start="4">
+<li><pre class=" language-bash"><code class="language-bash">/Users/qliang/Documents/code/JDK8/hotspot/src/share/vm/runtime/virtualspace.cpp:331:14: error: ordered comparison between pointer and zero <span class="token punctuation">(</span><span class="token string">'char *'</span> and <span class="token string">'int'</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>base<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">></span> 0<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   ~~~~~~ ^ ~</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p><code>base() &gt; 0</code> 改为 <code>base() != 0</code></p>
+<ul>
+<li><strong>一定要出现编码错误再修改文件，不然会报错误</strong></li>
+</ul>
+<pre class=" language-bash"><code class="language-bash">/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home//bin/javac  -J-XX:ThreadStackSize<span class="token operator">=</span>1536 -J-XX:-PrintVMOptions -J-XX:+UnlockDiagnosticVMOptions -J-XX:-LogVMOutput -J-Xmx512m -J-Xms512m -J-XX:PermSize<span class="token operator">=</span>32m -J-XX:MaxPermSize<span class="token operator">=</span>160m -encoding -source 6 -target 6 -d /Users/qliang/Documents/code/jvm/openjdk_7u/corba/btclasses \
+        -sourcepath <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/tools/src <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/tools/src/build/tools/stripproperties/StripProperties.java
+javac: 无效的标记: 6
+用法: javac <span class="token operator">&lt;</span>options<span class="token operator">></span> <span class="token operator">&lt;</span>source files<span class="token operator">></span>
+-help 用于列出可能的选项
+make<span class="token punctuation">[</span>4<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>/Users/qliang/Documents/code/jvm/openjdk_7u/corba/btjars/stripproperties.jar<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>3<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>build<span class="token punctuation">]</span> Error 1
+make<span class="token punctuation">[</span>2<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>build<span class="token punctuation">]</span> Error 1
+make<span class="token punctuation">[</span>1<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>corba-build<span class="token punctuation">]</span> Error 2
+make: *** <span class="token punctuation">[</span>build_product_image<span class="token punctuation">]</span> Error 2</code></pre>
+<pre class=" language-bash"><code class="language-bash">hotspot/src/share/vm/adlc/archDesc.cpp:335:35: error: <span class="token string">'&amp;&amp;'</span> within <span class="token string">'||'</span>
+      <span class="token punctuation">[</span>-Werror,-Wlogical-op-parentheses<span class="token punctuation">]</span></code></pre>
+<pre><code>export COMPILER_WARNINGS_FATAL=false</code></pre><p>5.</p>
+<pre class=" language-bash"><code class="language-bash">clang: error: unknown argument: <span class="token string">'-fpch-deps'</span></code></pre>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>修改 <code>hotspot/make/bsd/makefiles/gcc.make</code></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 注释217-219行</span>
+<span class="token comment" spellcheck="true"># Flags for generating make dependency flags.</span>
+<span class="token comment" spellcheck="true"># ifneq ("${CC_VER_MAJOR}", "2")</span>
+<span class="token comment" spellcheck="true"># DEPFLAGS = -fpch-deps -MMD -MP -MF $(DEP_DIR)/$(@:%=%.d)</span>
+<span class="token comment" spellcheck="true"># endif</span></code></pre>
+<p>6.高版本的gcc不再支持编译选项stabs</p>
+<pre class=" language-bash"><code class="language-bash">487 warnings and 4 errors generated.
+make<span class="token punctuation">[</span>8<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>precompiled.hpp.gch<span class="token punctuation">]</span> Error 1
+make<span class="token punctuation">[</span>7<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>the_vm<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>6<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>product<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>5<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>generic_build2<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>4<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>product<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>3<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>all_product_universal<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>2<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>universal_product<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>1<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>hotspot-build<span class="token punctuation">]</span> Error 2
+make: *** <span class="token punctuation">[</span>build_product_image<span class="token punctuation">]</span> Error 2</code></pre>
+<hr>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## Finished jdk (build time 00:03:28)</span>
+
+----- Build <span class="token function">times</span> -------
+Start 2019-03-18 20:53:08
+End   2019-03-18 21:00:51
+00:00:23 corba
+00:02:48 hotspot
+00:00:13 jaxp
+00:00:20 jaxws
+00:03:28 jdk
+00:00:31 langtools
+00:07:43 TOTAL
+-------------------------
+Finished building OpenJDK <span class="token keyword">for</span> target <span class="token string">'default'</span></code></pre>
+<hr>
+<blockquote>
+<p>==以下为编译openjdk7出现的各种问题，最终没有编译成功。==</p>
+</blockquote>
+<h2 id="编译openjdk7"><a href="#编译openjdk7" class="headerlink" title="编译openjdk7"></a>编译openjdk7</h2><h3 id="编译环境-2"><a href="#编译环境-2" class="headerlink" title="编译环境"></a>编译环境</h3><ul>
+<li>系统环境 ：macOS Mojave 10.14.3</li>
+<li>编译器 ：clang</li>
+<li>openJdk ：jdk7u-dev</li>
+<li>boostrap JDK ：oracle jdk1.7.0_80</li>
+<li>xcode version ：10.1 (10B61)</li>
+<li>ant version ：1.9.13</li>
+</ul>
+<hr>
+<h3 id="获取源码-2"><a href="#获取源码-2" class="headerlink" title="获取源码"></a>获取源码</h3><blockquote>
+<p><code>Mercurial</code>代码管理工具从仓库下载</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">brew <span class="token function">install</span> mercurial
+<span class="token function">hg</span> clone http://hg.openjdk.java.net/jdk7u/jdk7u-dev
+<span class="token function">cd</span> jdk7u-dev
+<span class="token function">chmod</span> 755 get_source.sh
+./get_source.sh</code></pre>
+<blockquote>
+<p>直接下载官方打包的源代码</p>
+</blockquote>
+<ul>
+<li>源码地址：<a href="http://jdk.java.net/java-se-ri/7" target="_blank" rel="noopener">http://jdk.java.net/java-se-ri/7</a></li>
+</ul>
+<hr>
+<h3 id="配置环境变量env-sh-2"><a href="#配置环境变量env-sh-2" class="headerlink" title="配置环境变量env.sh"></a>配置环境变量<code>env.sh</code></h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#语言选项，这个必须设置，否则编译好后会出现一个HashTable的NPE错</span>
+<span class="token function">export</span> LANG<span class="token operator">=</span>C
+
+<span class="token comment" spellcheck="true">#Bootstrap JDK的安装路径。必须设置。 </span>
+<span class="token function">export</span> ALT_BOOTDIR<span class="token operator">=</span>/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/
+
+<span class="token comment" spellcheck="true">#允许自动下载依赖</span>
+<span class="token function">export</span> ALLOW_DOWNLOADS<span class="token operator">=</span>true
+
+<span class="token comment" spellcheck="true">#并行编译的线程数，设置为和CPU内核数量一致即可</span>
+<span class="token function">export</span> HOTSPOT_BUILD_JOBS<span class="token operator">=</span>6
+<span class="token function">export</span> ALT_PARALLEL_COMPILE_JOBS<span class="token operator">=</span>6
+
+<span class="token comment" spellcheck="true">#比较本次build出来的映像与先前版本的差异。这个对我们来说没有意义，必须设置为false，否则sanity检查会报缺少先前版本JDK的映像。如果有设置dev或者DEV_ONLY=true的话这个不显式设置也行。 </span>
+<span class="token function">export</span> SKIP_COMPARE_IMAGES<span class="token operator">=</span>true
+
+<span class="token comment" spellcheck="true">#使用预编译头文件，不加这个编译会更慢一些</span>
+<span class="token function">export</span> USE_PRECOMPILED_HEADER<span class="token operator">=</span>true
+
+<span class="token function">export</span> COMPILER_WARNINGS_FATAL<span class="token operator">=</span>false
+
+<span class="token comment" spellcheck="true">#要编译的内容</span>
+<span class="token function">export</span> BUILD_LANGTOOLS<span class="token operator">=</span>true 
+<span class="token comment" spellcheck="true">#export BUILD_JAXP=false</span>
+<span class="token comment" spellcheck="true">#export BUILD_JAXWS=false </span>
+<span class="token comment" spellcheck="true">#export BUILD_CORBA=false</span>
+<span class="token function">export</span> BUILD_HOTSPOT<span class="token operator">=</span>true 
+<span class="token function">export</span> BUILD_JDK<span class="token operator">=</span>true
+
+<span class="token comment" spellcheck="true">#要编译的版本</span>
+<span class="token comment" spellcheck="true">#export SKIP_DEBUG_BUILD=false</span>
+<span class="token comment" spellcheck="true">#export SKIP_FASTDEBUG_BUILD=true</span>
+<span class="token comment" spellcheck="true">#export DEBUG_NAME=debug</span>
+
+<span class="token comment" spellcheck="true">#把它设置为false可以避开javaws和浏览器Java插件之类的部分的build。 </span>
+BUILD_DEPLOY<span class="token operator">=</span>false
+
+<span class="token comment" spellcheck="true">#把它设置为false就不会build出安装包。因为安装包里有些奇怪的依赖，但即便不build出它也已经能得到完整的JDK映像，所以还是别build它好了。</span>
+BUILD_INSTALL<span class="token operator">=</span>false
+
+<span class="token comment" spellcheck="true">#编译结果所存放的路径</span>
+<span class="token function">export</span> ALT_OUTPUTDIR<span class="token operator">=</span>/Users/qliang/Documents/code/jvm/openjdk_7u
+
+<span class="token comment" spellcheck="true">#这两个环境变量必须去掉，不然会有很诡异的事情发生（我没有具体查过这些“”诡异的事情”，Makefile脚本检查到有这2个变量就会提示警告“）</span>
+unset JAVA_HOME
+unset CLASSPATH
+
+<span class="token function">export</span> ALT_FREETYPE_HEADERS_PATH<span class="token operator">=</span>/usr/local/include/freetype2
+<span class="token function">export</span> ALT_FREETYPE_LIB_PATH<span class="token operator">=</span>/usr/local/Cellar/freetype/2.9.1/lib
+
+<span class="token comment" spellcheck="true"># export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8</span>
+
+<span class="token comment" spellcheck="true"># make 2>&amp;1 | tee $ALT_OUTPUTDIR/build.log</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> env.sh
+
+<span class="token comment" spellcheck="true"># 检查</span>
+<span class="token function">make</span> sanity 
+
+Sanity check passed.
+即可进行编译</code></pre>
+<hr>
+<h3 id="遇到的问题-1"><a href="#遇到的问题-1" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ol>
+<li><code>llvm-gcc</code>找不到<pre class=" language-bash"><code class="language-bash">/bin/sh: /Library/Developer/CommandLineTools/usr/bin/llvm-gcc: No such <span class="token function">file</span> or directory</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /Library/Developer/CommandLineTools/usr/bin/
+<span class="token comment" spellcheck="true"># 软连接</span>
+<span class="token function">sudo</span> <span class="token function">ln</span> -s gcc llvm-gcc</code></pre>
+<p>2.<code>FreeType</code>版本过低</p>
+<pre class=" language-bash"><code class="language-bash">ERROR: FreeType version  2.3.0  or higher is required.</code></pre>
+<blockquote>
+<p>解决方案：环境变量添加如下</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> ALT_FREETYPE_HEADERS_PATH<span class="token operator">=</span>/usr/local/include/freetype2
+<span class="token function">export</span> ALT_FREETYPE_LIB_PATH<span class="token operator">=</span>/usr/local/Cellar/freetype/2.9.1/lib</code></pre>
+<ol start="3">
+<li><pre class=" language-bash"><code class="language-bash">主版本 52 比 51 新, 此编译器支持最新的主版本。</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash">boostrap JDK版本太高，降低版本</code></pre>
+<ol start="4">
+<li>编码问题</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">/Users/qliang/Documents/code/jvm/openjdk_7u/corba/gensrc/com/sun/corba/se/spi/activation/Locator.java:6: 错误: 编码ascii的不可映射字符
+* ���IDL-to-Java ��������� <span class="token punctuation">(</span>���������<span class="token punctuation">)</span>, ������ <span class="token string">"3.2"</span>������</code></pre>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>借鉴于 <a href="https://0x9e370001.iteye.com/blog/1729802" target="_blank" rel="noopener">https://0x9e370001.iteye.com/blog/1729802</a> 修改文件的方法</p>
+<pre class=" language-bash"><code class="language-bash">文件： /corba/make/common/shared/Defs-java.gmk
+
+133行
+JAVACFLAGS +<span class="token operator">=</span> -encoding ascii
+改为
+<span class="token comment" spellcheck="true">#JAVACFLAGS += -encoding ascii</span>
+
+194行
+BOOT_JAVACFLAGS  +<span class="token operator">=</span> -encoding ascii -source <span class="token variable"><span class="token variable">$(</span>BOOT_SOURCE_LANGUAGE_VERSION<span class="token variable">)</span></span> -target <span class="token variable"><span class="token variable">$(</span>BOOT_TARGET_CLASS_VERSION<span class="token variable">)</span></span>
+改为
+
+BOOT_JAVACFLAGS  +<span class="token operator">=</span> -encoding -source <span class="token variable"><span class="token variable">$(</span>BOOT_SOURCE_LANGUAGE_VERSION<span class="token variable">)</span></span> -target <span class="token variable"><span class="token variable">$(</span>BOOT_TARGET_CLASS_VERSION<span class="token variable">)</span></span>
+</code></pre>
+<ul>
+<li><strong>一定要出现编码错误再修改文件，不然会报错误</strong></li>
+</ul>
+<pre class=" language-bash"><code class="language-bash">/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home//bin/javac  -J-XX:ThreadStackSize<span class="token operator">=</span>1536 -J-XX:-PrintVMOptions -J-XX:+UnlockDiagnosticVMOptions -J-XX:-LogVMOutput -J-Xmx512m -J-Xms512m -J-XX:PermSize<span class="token operator">=</span>32m -J-XX:MaxPermSize<span class="token operator">=</span>160m -encoding -source 6 -target 6 -d /Users/qliang/Documents/code/jvm/openjdk_7u/corba/btclasses \
+        -sourcepath <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/tools/src <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/tools/src/build/tools/stripproperties/StripProperties.java
+javac: 无效的标记: 6
+用法: javac <span class="token operator">&lt;</span>options<span class="token operator">></span> <span class="token operator">&lt;</span>source files<span class="token operator">></span>
+-help 用于列出可能的选项
+make<span class="token punctuation">[</span>4<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>/Users/qliang/Documents/code/jvm/openjdk_7u/corba/btjars/stripproperties.jar<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>3<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>build<span class="token punctuation">]</span> Error 1
+make<span class="token punctuation">[</span>2<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>build<span class="token punctuation">]</span> Error 1
+make<span class="token punctuation">[</span>1<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>corba-build<span class="token punctuation">]</span> Error 2
+make: *** <span class="token punctuation">[</span>build_product_image<span class="token punctuation">]</span> Error 2</code></pre>
+<pre class=" language-bash"><code class="language-bash">hotspot/src/share/vm/adlc/archDesc.cpp:335:35: error: <span class="token string">'&amp;&amp;'</span> within <span class="token string">'||'</span>
+      <span class="token punctuation">[</span>-Werror,-Wlogical-op-parentheses<span class="token punctuation">]</span></code></pre>
+<pre><code>export COMPILER_WARNINGS_FATAL=false</code></pre><p>5.</p>
+<pre class=" language-bash"><code class="language-bash">clang: error: unknown argument: <span class="token string">'-fpch-deps'</span></code></pre>
+<blockquote>
+<p>解决方案</p>
+</blockquote>
+<p>修改 <code>hotspot/make/bsd/makefiles/gcc.make</code></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 注释217-219行</span>
+<span class="token comment" spellcheck="true"># Flags for generating make dependency flags.</span>
+<span class="token comment" spellcheck="true"># ifneq ("${CC_VER_MAJOR}", "2")</span>
+<span class="token comment" spellcheck="true"># DEPFLAGS = -fpch-deps -MMD -MP -MF $(DEP_DIR)/$(@:%=%.d)</span>
+<span class="token comment" spellcheck="true"># endif</span></code></pre>
+<p>6.高版本的gcc不再支持编译选项stabs</p>
+<pre class=" language-bash"><code class="language-bash">487 warnings and 4 errors generated.
+make<span class="token punctuation">[</span>8<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>precompiled.hpp.gch<span class="token punctuation">]</span> Error 1
+make<span class="token punctuation">[</span>7<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>the_vm<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>6<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>product<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>5<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>generic_build2<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>4<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>product<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>3<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>all_product_universal<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>2<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>universal_product<span class="token punctuation">]</span> Error 2
+make<span class="token punctuation">[</span>1<span class="token punctuation">]</span>: *** <span class="token punctuation">[</span>hotspot-build<span class="token punctuation">]</span> Error 2
+make: *** <span class="token punctuation">[</span>build_product_image<span class="token punctuation">]</span> Error 2</code></pre>
+<hr>
+<h5 id="该文章来源《深入理解Java虚拟机》读后实践"><a href="#该文章来源《深入理解Java虚拟机》读后实践" class="headerlink" title="该文章来源《深入理解Java虚拟机》读后实践"></a>该文章来源《深入理解Java虚拟机》读后实践</h5><hr>
+<h2 id="以上"><a href="#以上" class="headerlink" title="以上"></a>以上</h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://bestqliang.com" rel="external nofollow noreferrer">Qliang</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://bestqliang.com/2019/06/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-yi-macos-xia-bian-yi-openjdk10/">https://bestqliang.com/2019/06/10/shen-ru-li-jie-java-xu-ni-ji-2-zhi-yi-macos-xia-bian-yi-openjdk10/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://bestqliang.com" target="_blank">Qliang</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/JVM/">
+                                    <span class="chip bg-color">JVM</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                    <span class="chip bg-color">虚拟机</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/06/12/shen-ru-li-jie-java-xu-ni-ji-2-zhi-er-yun-xing-shi-shu-ju-qu-yu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="深入理解Java虚拟机(2)之二-运行时数据区域">
+                        
+                        <span class="card-title">深入理解Java虚拟机(2)之二-运行时数据区域</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            运行时数据区域
+
+程序计数器(Program Counter Register):
+
+
+线程私有，一块较小的内存空间，可以看做是当前线程所执行的字节码的行号指示器。在虚拟机的概念模型里(仅是概念模型，各种虚拟机可能会通过一些更高效的方法实现
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/JVM/">
+                        <span class="chip bg-color">JVM</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/03/26/springmvc/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="SpringMVC">
+                        
+                        <span class="card-title">SpringMVC</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一、跟踪Spring MVC请求
+
+请求的第一站是Spring的DispatcherServlet，DispatcherServlet查询一个或多个处理器映射(Handler Mappering)，处理映射器会根据请求携带的URL信息来决策
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-03-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%8A%80%E6%9C%AF/">
+                        <span class="chip bg-color">技术</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                    <a href="/tags/Spring%E5%AE%9E%E6%88%98/">
+                        <span class="chip bg-color">Spring实战</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2017</span>
+            <a href="https://bestqliang.com" target="_blank">Qliang</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">89k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2017";
+                    var startMonth = "1";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/qliang0816" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:qliang0816@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?28b697bcd6667f60e343d41dff117404";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
