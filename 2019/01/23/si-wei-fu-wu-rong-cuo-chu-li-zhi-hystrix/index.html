@@ -28,17 +28,17 @@
 
 
     <title>四、微服务容错处理之Hystrix | Qliang的小站</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Qliang的小站" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -51,7 +51,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Qliang的小站</span>
                 </a>
@@ -127,7 +127,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Qliang的小站</div>
         <div class="logo-desc">
@@ -274,7 +274,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -292,7 +292,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -459,14 +459,14 @@
             <div id="articleContent">
                 <h4 id="实现容错的手段"><a href="#实现容错的手段" class="headerlink" title="实现容错的手段"></a>实现容错的手段</h4><h5 id="雪崩效应"><a href="#雪崩效应" class="headerlink" title="雪崩效应"></a>雪崩效应</h5><p>我们常把”基础服务故障”导致”级联故障”的现象称为雪崩效应。雪崩效应描述的是提供者不可用导致消费者不可用，并将不可用逐渐放大的过程。</p>
 <p>如图所示，A 作为服务提供者(基础服务)，B 为 A 的服务消费者，C 和 D 是 B 的服务消费者。当 A 不可用引起 B 的不可用，并将不可用像滚雪球一样放大到 C 和 D 时，雪崩效应就形成了。</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E5%A4%84%E7%90%86%E4%B9%8BHystrix/%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94.png?raw=true" alt="雪崩效应"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E5%A4%84%E7%90%86%E4%B9%8BHystrix/%E9%9B%AA%E5%B4%A9%E6%95%88%E5%BA%94.png?raw=true" alt="雪崩效应"></p>
 <h5 id="断路器模式"><a href="#断路器模式" class="headerlink" title="断路器模式"></a>断路器模式</h5><p>如图:</p>
 <ul>
 <li>正常情况下，断路器关闭，可正常请求依赖的服务。</li>
 <li>当一段时间内，请求失败率达到一定阈值(默认 5s 内 20 次失败)，断路器就会打开。此时，不会再去请求依赖的服务。</li>
 <li>断路器打开一段时间后，会自动进入”半开”状态。此时，断路器可允许一个请求访问依赖的服务。如果该请求能够调用成功，则关闭断路器，否则继续保持打开状态。</li>
 </ul>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E5%A4%84%E7%90%86%E4%B9%8BHystrix/%E6%96%AD%E8%B7%AF%E5%99%A8%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E9%80%BB%E8%BE%91.png?raw=true" alt="断路器"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%AE%B9%E9%94%99%E5%A4%84%E7%90%86%E4%B9%8BHystrix/%E6%96%AD%E8%B7%AF%E5%99%A8%E7%8A%B6%E6%80%81%E8%BD%AC%E6%8D%A2%E9%80%BB%E8%BE%91.png?raw=true" alt="断路器"></p>
 <hr>
 <h4 id="Hystrix简介"><a href="#Hystrix简介" class="headerlink" title="Hystrix简介"></a><code>Hystrix</code>简介</h4><p><code>Hystrix</code>是<code>Netflix</code>开源的一个延迟和容错库，用于隔离访问远程系统、服务或第三方库，防止级联失败，从而提高系统的可用性与容错性。</p>
 <p><code>Hystrix</code>主要通过以下几点实现延迟和容错：</p>
@@ -616,13 +616,13 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -636,8 +636,8 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
     <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
@@ -647,7 +647,7 @@
     <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: '732b4b9c2208cf529591',
@@ -685,7 +685,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="六、微服务容错处理之Feign使用Hystrix">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="六、微服务容错处理之Feign使用Hystrix">
                         
                         <span class="card-title">六、微服务容错处理之Feign使用Hystrix</span>
                     </div>
@@ -747,7 +747,7 @@ feign:
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="三、微服务声明式REST调用之Feign">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="三、微服务声明式REST调用之Feign">
                         
                         <span class="card-title">三、微服务声明式REST调用之Feign</span>
                     </div>
@@ -838,21 +838,21 @@ public User findById(@PathVariable Long id) {
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -880,7 +880,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1087,10 +1087,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1101,12 +1101,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1137,10 +1137,10 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1152,15 +1152,15 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 
 </html>

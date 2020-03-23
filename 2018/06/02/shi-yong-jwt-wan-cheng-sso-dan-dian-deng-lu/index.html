@@ -28,17 +28,17 @@
 
 
     <title>使用jwt完成sso单点登录 | Qliang的小站</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/favicon.png">
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/jquery/jquery.min.js"></script>
     
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Qliang的小站" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
@@ -51,7 +51,7 @@
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
                     
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/logo.png" class="logo-img" alt="LOGO">
                     
                     <span class="logo-span">Qliang的小站</span>
                 </a>
@@ -127,7 +127,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">Qliang的小站</div>
         <div class="logo-desc">
@@ -274,7 +274,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -292,7 +292,7 @@
 <main class="post-container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/tocbot/tocbot.css">
 <style>
     #articleContent h1::before,
     #articleContent h2::before,
@@ -472,7 +472,7 @@
 <li><code>session</code>通常有失效时间的设定，比如 2 个小时。当失效时间到，服务器会销毁之前的<code>session</code>，并创建新的<code>session</code>返回给用户。但是只要用户在失效时间内，有发送新的请求给服务器，通常服务器都会把他对应的<code>session</code>的失效时间根据当前的请求时间再延长 2 个小时。</li>
 <li><code>session</code>在一开始并不具备会话管理的作用。它只有在用户登录认证成功之后，并且往<code>session</code>对象里面放入了用户登录成功的凭证，才能用来管理会话。管理会话的逻辑也很简单，只要拿到用户的<code>session</code>对象，看它里面有没有登录成功的凭证，就能判断这个用户是否已经登录。当用户主动退出的时候，会把它的<code>session</code>对象里的登录凭证清掉。所以在用户登录前或退出后或者<code>session</code>对象失效时，肯定都是拿不到需要的登录凭证的。</li>
 </ol>
-<p>以上过程可简单使用流程图描述如下：<br><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/server-session.png?raw=true" alt="server-sessionid"></p>
+<p>以上过程可简单使用流程图描述如下：<br><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/server-session.png?raw=true" alt="server-sessionid"></p>
 <p>它还有一个比较大的优点就是安全性好，因为在浏览器端与服务器端保持会话状态的媒介始终只是一个<code>sessionid</code>串，只要这个串够随机，攻击者就不能轻易冒充他人的<code>sessionid</code>进行操作；除非通过 CSRF 或 http 劫持的方式，才有可能冒充别人进行操作；即使冒充成功，也必须被冒充的用户<code>session</code>里面包含有效的登录凭证才行。但是在真正决定用它管理会话之前，也得根据自己的应用情况考虑以下几个问题：</p>
 <ol>
 <li>这种方式将会话信息存储在 web 服务器里面，所以在用户同时在线量比较多时，这些会话信息会占据比较多的内存；</li>
@@ -486,7 +486,7 @@
 <li>服务端把上一步创建好的登录凭证，先对它做数字签名，然后再用对称加密算法做加密处理，将签名、加密后的字串，写入<code>cookie</code>。<code>cookie</code>的名字必须固定（如<code>ticket</code>），因为后面再获取的时候，还得根据这个名字来获取<code>cookie</code>值。这一步添加数字签名的目的是防止登录凭证里的信息被篡改，因为一旦信息被篡改，那么下一步做签名验证的时候肯定会失败。做加密的目的，是防止<code>cookie</code>被别人截取的时候，无法轻易读到其中的用户信息。</li>
 <li>用户登录后发起后续请求，服务端根据上一步存登录凭证的<code>cookie</code>名字，获取到相关的<code>cookie</code>值。然后先做解密处理，再做数字签名的认证，如果这两步都失败，说明这个登录凭证非法；如果这两步成功，接着就可以拿到原始存入的登录凭证了。然后用这个凭证的过期时间和当前时间做对比，判断凭证是否过期，如果过期，就需要用户再重新登录；如果未过期，则允许请求继续。</li>
 </ol>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/cookie-base.png?raw=true" alt="cookie-based"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/cookie-base.png?raw=true" alt="cookie-based"></p>
 <p>这种方式最大的优点就是实现了服务端的无状态化，彻底移除了服务端对会话的管理的逻辑，服务端只需要负责创建和验证登录<code>cookie</code>即可，无需保持用户的状态信息。对于第一种方式的第二个问题，用户会话信息共享的问题，它也能很好解决：因为如果只是同一个应用做集群部署，由于验证登录凭证的代码都是一样的，所以不管是哪个服务器处理用户请求，总能拿到<code>cookie</code>中的登录凭证来进行验证；如果是不同的应用，只要每个应用都包含相同的登录逻辑，那么他们也是能轻易实现会话共享的，不过这种情况下，登录逻辑里面数字签名以及加密解密要用到的密钥文件或者密钥串，需要在不同的应用里面共享，总而言之，就是需要算法完全保持一致。</p>
 <p>这种方式由于把登录凭证直接存放客户端，并且需要<code>cookie</code>传来传去，所以它的缺点也比较明显：</p>
 <ol>
@@ -496,7 +496,7 @@
 </ol>
 <p>前面两种会话管理方式因为都用到<code>cookie</code>，不适合用在 native app 里面：native app 不好管理<code>cookie</code>，毕竟它不是浏览器。这两种方案都不适合用来做纯 api 服务的登录认证。要实现 api 服务的登录认证，就要考虑下面要介绍的第三种会话管理方式。</p>
 <h4 id="三-token-based的管理方式"><a href="#三-token-based的管理方式" class="headerlink" title="三.token-based的管理方式"></a>三.<code>token-based</code>的管理方式</h4><p>这种方式从流程和实现上来说，跟<code>cookie-based</code>的方式没有太多区别，只不过<code>cookie-based</code>里面写到<code>cookie</code>里面的<code>ticket</code>在这种方式下称为<code>token</code>，这个<code>token</code>在返回给客户端之后，后续请求都必须通过 url 参数或者是 http header 的形式，主动带上<code>token</code>，这样服务端接收到请求之后就能直接从 http header 或者 url 里面取到 token 进行验证：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/token-base.png?raw=true" alt="token-base"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/token-base.png?raw=true" alt="token-base"></p>
 <p>这种方式不通过<code>cookie</code>进行<code>token</code>的传递，而是每次请求的时候，主动把<code>token</code>加到 http header 里面或者 url 后面，所以即使在 native app 里面也能使用它来调用我们通过 web 发布的 api 接口。app 里面还要做两件事情：</p>
 <ol>
 <li>有效存储<code>token</code>，得保证每次调接口的时候都能从同一个位置拿到同一个<code>token</code>；</li>
@@ -517,20 +517,20 @@
 <li>自包含：这个串可以包含很多信息，比如用户的 id、角色等，别人拿到这个串，就能拿到这些关键的业务信息，从而避免再通过数据库查询等方式才能得到它们。</li>
 </ol>
 <p>通常一个<code>JWT</code>是长这个样子的：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt1.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt1.png?raw=true" alt="image"></p>
 <p>要知道一个<code>JWT</code>是怎么产生以及如何用于会话管理，只要弄清楚<code>JWT</code>的数据结构以及它签发和验证的过程即可。</p>
 <h5 id="一-JWT的数据结构以及签发过程"><a href="#一-JWT的数据结构以及签发过程" class="headerlink" title="一. JWT的数据结构以及签发过程"></a>一. <code>JWT</code>的数据结构以及签发过程</h5><p>一个<code>JWT</code>实际上是由三个部分组成：<code>header（头部）</code>、<code>payload（载荷）</code>和<code>signature（签名</code>）。这三个部分在<code>JWT</code>里面分别对应英文句号分隔出来的三个串：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt2.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt2.png?raw=true" alt="image"></p>
 <p>先来看<code>header</code>部分的结构以及它的生成方法。<code>header</code>部分是由下面格式的 json 结构生成出来：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt3.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt3.png?raw=true" alt="image"></p>
 <p>这个 json 中的<code>typ</code>属性，用来标识整个<code>token</code>字符串是一个<code>JWT</code>字符串；它的<code>alg</code>属性，用来说明这个<code>JWT</code>签发的时候所使用的签名和摘要算法，常用的值以及对应的算法如下：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt4.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt4.png?raw=true" alt="image"></p>
 <p><code>typ</code>跟<code>alg</code>属性的全称其实是<code>type</code>跟<code>algorithm</code>，分别是类型跟算法的意思。之所以都用三个字母来表示，也是基于<code>JWT</code>最终字串大小的考虑，同时也是跟<code>JWT</code>这个名称保持一致，这样就都是三个字符了…<code>typ</code>跟<code>alg</code>是<code>JWT</code>中标准中规定的属性名称，虽然在签发<code>JWT</code>的时候，也可以把这两个名称换掉，但是如果随意更换了这个名称，就有可能在<code>JWT</code>验证的时候碰到问题，因为拿到<code>JWT</code>的人，默认会根据<code>typ</code>和<code>alg</code>去拿<code>JWT</code>中的<code>header</code>信息，当你改了名称之后，显然别人是拿不到<code>header</code>信息的，他又不知道你把这两个名字换成了什么。<code>JWT</code>作为标准的意义在于统一各方对同一个事情的处理方式，各个使用方都按它约定好的格式和方法来签发和验证<code>token</code>，这样即使运行的平台不一样，也能够保证<code>token</code>进行正确的传递。</p>
 <p>一般签发<code>JWT</code>的时候，<code>header</code>对应的 json 结构只需要<code>typ</code>和<code>alg</code>属性就够了。<code>JWT</code>的<code>header</code>部分是把前面的 json 结构，经过 Base64Url 编码之后生成出来的：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt5.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt5.png?raw=true" alt="image"></p>
 <p>（在线 base64 编码：<a href="http://www1.tc711.com/tool/BASE64.htm）" target="_blank" rel="noopener">http://www1.tc711.com/tool/BASE64.htm）</a></p>
 <p>再来看<code>payload</code>部分的结构和生成过程。<code>payload</code>部分是由下面类似格式的 json 结构生成出来：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt6.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt6.png?raw=true" alt="image"></p>
 <p><code>payload</code>的 json 结构并不像<code>header</code>那么简单，<code>payload</code>用来承载要传递的数据，它的 json 结构实际上是对<code>JWT</code>要传递的数据的一组声明，这些声明被<code>JWT</code>标准称为<code>claims</code>，它的一个“属性值对”其实就是一个<code>claim</code>，每一个<code>claim</code>的都代表特定的含义和作用。比如上面结构中的<code>sub</code>代表这个<code>token</code>的所有人，存储的是所有人的<code>ID</code>；<code>name</code>表示这个所有人的名字；<code>admin</code>表示所有人是否管理员的角色。当后面对<code>JWT</code>进行验证的时候，这些<code>claim</code>都能发挥特定的作用。</p>
 <p>根据<code>JWT</code>的标准，这些<code>claims</code>可以分为以下三种类型：</p>
 <ol>
@@ -545,15 +545,15 @@
 </ol>
 <p>按照<code>JWT</code>标准的说明：保留的<code>claims</code>都是可选的，在生成<code>payload</code>不强制用上面的那些<code>claim</code>，你可以完全按照自己的想法来定义<code>payload</code>的结构，不过这样搞根本没必要：第一是，如果把<code>JWT</code>用于认证， 那么<code>JWT</code>标准内规定的几个<code>claim</code>就足够用了，甚至只需要其中一两个就可以了，假如想往<code>JWT</code>里多存一些用户业务信息，比如角色和用户名等，这倒是用自定义的<code>claim</code>来添加；第二是，<code>JWT</code>标准里面针对它自己规定的<code>claim</code>都提供了有详细的验证规则描述，每个实现库都会参照这个描述来提供<code>JWT</code>的验证实现，所以如果是自定义的<code>claim</code>名称，那么你用到的实现库就不会主动去验证这些<code>claim</code>。</p>
 <p>最后也是把这个 json 结构做 base64url 编码之后，就能生成<code>payload</code>部分的串：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt7.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt7.png?raw=true" alt="image"></p>
 <p>（在线 base64 编码：<a href="http://www1.tc711.com/tool/BASE64.htm）" target="_blank" rel="noopener">http://www1.tc711.com/tool/BASE64.htm）</a></p>
 <p>最后看<code>signature</code>部分的生成过程。签名是把<code>header</code>和<code>payload</code>对应的 json 结构进行 base64url 编码之后得到的两个串用英文句点号拼接起来，然后根据<code>header</code>里面<code>alg</code>指定的签名算法生成出来的。算法不同，签名结果不同，但是不同的算法最终要解决的问题是一样的。以<code>alg: HS256</code>为例来说明前面的签名如何来得到。按照前面<code>alg</code>可用值的说明，HS256 其实包含的是两种算法：HMAC 算法和 SHA256 算法，前者用于生成摘要，后者用于对摘要进行数字签名。这两个算法也可以用 HMACSHA256 来统称。运用 HMACSHA256 实现<code>signature</code>的算法是：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt8.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt8.png?raw=true" alt="image"></p>
 <p>正好找到一个在线工具能够测试这个签名算法的结果，比如我们拿前面的<code>header</code>和<code>payload</code>串来测试，并把“secret”这个字符串就当成密钥来测试：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt9.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt9.png?raw=true" alt="image"></p>
 <p>（<a href="https://1024tools.com/hmac）" target="_blank" rel="noopener">https://1024tools.com/hmac）</a></p>
 <p>最后的结果 B 其实就是 JWT 需要的 signature。不过对比我在介绍 JWT 的开始部分给出的 JWT 的举例：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt10.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/jwt10.png?raw=true" alt="image"></p>
 <p>会发现通过在线工具生成的<code>header</code>与<code>payload</code>都与这个举例中的对应部分相同，但是通过在线工具生成的<code>signature</code>与上面图中<code>的signature</code>有细微区别，在于最后是否有“=”字符。这个区别产生的原因在于上图中的<code>JWT</code>是通过<code>JWT</code>的实现库签发的<code>JWT</code>，这些实现库最后编码的时候都用的是 base64url 编码，而前面那些在线工具都是 bas64 编码，这两种编码方式不完全相同，导致编码结果有区别。</p>
 <p>以上就是一个<code>JWT</code>包含的全部内容以及它的签发过程。接下来看看该如何去验证一个<code>JWT</code>是否为一个有效的<code>JWT</code>。</p>
 <h5 id="二-JWT的验证过程"><a href="#二-JWT的验证过程" class="headerlink" title="二.JWT的验证过程"></a>二.<code>JWT</code>的验证过程</h5><p>这个部分介绍<code>JWT</code>的验证规则，主要包括签名验证和<code>payload</code>里面各个标准<code>claim</code>的验证逻辑介绍。只有验证成功的<code>JWT</code>，才能当做有效的凭证来使用。</p>
@@ -562,7 +562,7 @@
 <p><code>iss(Issuser)</code>：如果签发的时候这个<code>claim</code>的值是“a.com”，验证的时候如果这个<code>claim</code>的值不是“a.com”就属于验证失败；<br><code>sub(Subject)</code>：如果签发的时候这个<code>claim</code>的值是“liuyunzhuge”，验证的时候如果这个<code>claim</code>的值不是“liuyunzhuge”就属于验证失败；<br><code>(Audience)</code>：如果签发的时候这个<code>claim</code>的值是“[‘b.com’,’c.com’]”，验证的时候这个<code>claim</code>的值至少要包含 b.com，c.com 的其中一个才能验证通过；<br><code>exp(Expiration time)</code>：如果验证的时候超过了这个<code>claim</code>指定的时间，就属于验证失败；<br><code>nbf(Not Before)</code>：如果验证的时候小于这个<code>claim</code>指定的时间，就属于验证失败；<br><code>iat(Issued at)</code>：它可以用来做一些 maxAge 之类的验证，假如验证时间与这个<code>claim</code>指定的时间相差的时间大于通过 maxAge 指定的一个值，就属于验证失败；<br><code>jti(JWT ID)</code>：如果签发的时候这个<code>claim</code>的值是“1”，验证的时候如果这个<code>claim</code>的值不是“1”就属于验证失败；<br>需要注意的是，在验证一个<code>JWT</code>的时候，签名认证是每个实现库都会自动做的，但是<code>payload</code>的认证是由使用者来决定的。因为<code>JWT</code>里面可能不会包含任何一个标准的<code>claim</code>，所以它不会自动去验证这些<code>claim</code>。</p>
 <p>以登录认证来说，在签发<code>JWT</code>的时候，完全可以只用<code>sub</code>跟<code>exp</code>两个<code>claim</code>，用<code>sub</code>存储用户的<code>id</code>，用<code>exp</code>存储它本次登录之后的过期时间，然后在验证的时候仅验证<code>exp</code>这个<code>claim</code>，以实现会话的有效期管理。</p>
 <h4 id="JWT-SSO"><a href="#JWT-SSO" class="headerlink" title="JWT SSO"></a><strong><em>JWT SSO</em></strong></h4><p>场景一：用户发起对业务系统的第一次访问，假设他第一次访问的是系统 A 的 some/page 这个页面，它最终成功访问到这个页面的过程是：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso11.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso11.png?raw=true" alt="image"></p>
 <p>在这个过程里面，我认为理解的关键点在于：</p>
 <ol>
 <li><p>它用到了两个<code>cookie</code>(<code>jwt</code>和<code>sid</code>)和三次重定向来完成会话的创建和会话的传递；</p>
@@ -577,16 +577,16 @@
 <p>还要注意的是：CAS 服务里面的<code>session</code>属于服务端创建的对象，所以要考虑<code>sessionid</code>唯一性以及<code>session</code>共享（假如 CAS 采用集群部署的话）的问题。<code>sessionid</code>的唯一性可以通过用户名密码加随机数然后用 hash 算法如 md5 简单处理；<code>session</code>共享，可以用<code>memcached</code>或者<code>redis</code>这种专门的支持集群部署的缓存服务器管理<code>session</code>来处理。</p>
 <p>由于服务端<code>session</code>具有生命周期的特点，到期需自动销毁，所以不要自己去写<code>session</code>的管理，免得引发其它问题，到 github 里找开源的缓存管理中间件来处理即可。存储<code>session</code>对象的时候，只要用<code>sessionid</code>作为 key，<code>session</code>对象本身作为<code>value</code>，存入缓存即可。<code>session</code>对象里面除了<code>sessionid</code>，还可以存放登录之后获取的用户信息等业务数据，方便业务系统调用的时候，从<code>session</code>里面返回会话数据。</p>
 <p>场景二：用户登录之后，继续访问系统 A 的其它页面，如 some/page2，它的处理过程是：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso2.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso2.png?raw=true" alt="image"></p>
 <p>从这一步可以看出，即使登录之后，也要每次跟 CAS 校验<code>jwt</code>的有效性以及会话的有效性，其实<code>jwt</code>的有效性也可以放在业务系统里面处理的，但是会话的有效性就必须到 CAS 那边才能完成了。当 CAS 拿到<code>jwt</code>里面的<code>sessionid</code>之后，就能到<code>session</code>缓存服务器里面去验证该<code>sessionid</code>对应的<code>session</code>对象是否存在，不存在，就说明会话已经销毁了（退出）。</p>
 <p>场景三：用户登录了系统 A 之后，再去访问其他系统如系统 B 的资源，比如系统 B 的 some/page，它最终能访问到系统 B 的 some/page 的流程是：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso13.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso13.png?raw=true" alt="image"></p>
 <p>这个过程的关键在于第一次重定向的时候，它会把<code>sid</code>这个<code>cookie</code>带回给 CAS 服务器，所以 CAS 服务器能够判断出会话是否已经建立，如果已经建立就跳过登录页的逻辑。</p>
 <p>场景四：用户继续访问系统 B 的其它资源，如系统 B 的 some/page2：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso4.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso4.png?raw=true" alt="image"></p>
 <p>这个场景的逻辑跟场景二完全一致。</p>
 <p>场景五：退出登录，假如它从系统 B 发起退出，最终的流程是：</p>
-<p><img src="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso5.png?raw=true" alt="image"></p>
+<p><img src="/medias/loading.gif" data-original="https://github.com/qliang0816/MarkdownImage/blob/master/jwt_oauth/sso5.png?raw=true" alt="image"></p>
 <p>最重要的是要清除<code>sid</code>的<code>cookie</code>，<code>jwt</code>的<code>cookie</code>可能业务系统都有创建，所以不可能在退出的时候还挨个去清除那些系统的<code>cookie</code>，只要<code>sid</code>一清除，那么即使那些<code>jwt</code>的<code>cookie</code>在下次访问的时候还会被传递到业务系统的服务端，由于<code>jwt</code>里面的<code>sid</code>已经无效，所以最后还是会被重定向到 CAS 登录页进行处理。</p>
 <p>方案总结<br>以上方案两个关键的前提：</p>
 <ol>
@@ -712,13 +712,13 @@
                     
                 </div>
                 <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/share/css/share.min.css">
 
 <div id="article-share">
     
     
     <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="/libs/share/js/social-share.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/share/js/social-share.min.js"></script>
     
 
     
@@ -732,8 +732,8 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/css/my-gitalk.css">
 
 <div class="card gitalk-card" data-aos="fade-up">
     <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
@@ -743,7 +743,7 @@
     <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/gitalk/gitalk.min.js"></script>
 <script>
     let gitalk = new Gitalk({
         clientID: '732b4b9c2208cf529591',
@@ -781,7 +781,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="shadowsock搭建">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="shadowsock搭建">
                         
                         <span class="card-title">shadowsock搭建</span>
                     </div>
@@ -841,7 +841,7 @@ github:https://github.com/teddysun
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="ubuntu定时备份数据库并发送邮件">
+                        <img src="/medias/loading.gif" data-original="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="ubuntu定时备份数据库并发送邮件">
                         
                         <span class="card-title">ubuntu定时备份数据库并发送邮件</span>
                     </div>
@@ -879,12 +879,12 @@ sudo vim /etc/s-nai
                         <span class="chip bg-color">实践</span>
                     </a>
                     
-                    <a href="/tags/Docker/">
-                        <span class="chip bg-color">Docker</span>
-                    </a>
-                    
                     <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                         <span class="chip bg-color">数据库</span>
+                    </a>
+                    
+                    <a href="/tags/Docker/">
+                        <span class="chip bg-color">Docker</span>
                     </a>
                     
                 </div>
@@ -937,21 +937,21 @@ sudo vim /etc/s-nai
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeBlockFuction.js"></script>
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeLang.js"></script>
 
 
 <!-- 代码块复制 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeCopy.js"></script>
 
 
 <!-- 代码块收缩 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/codeBlock/codeShrink.js"></script>
 
 
 <!-- 代码块折行 -->
@@ -979,7 +979,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </div>
 
 
-<script src="/libs/tocbot/tocbot.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/tocbot/tocbot.min.js"></script>
 <script>
     $(function () {
         tocbot.init({
@@ -1186,10 +1186,10 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/" + "search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->
@@ -1200,12 +1200,12 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/js/matery.js"></script>
 
     <!-- Baidu Analytics -->
 
@@ -1236,10 +1236,10 @@ $(function () {
 </script>
 
     
-    <script src="/libs/others/clicklove.js" async="async"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/others/clicklove.js" async="async"></script>
     
     
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    <script async src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
@@ -1251,15 +1251,15 @@ $(function () {
     
     
     <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
     
 
     
     
     
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/gh/qliang0816/qliang0816.github.io/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7}});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).bottom&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script></body>
 
 </html>
