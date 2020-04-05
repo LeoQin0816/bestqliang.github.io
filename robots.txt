@@ -1,15 +1,17 @@
 User-agent: *
 Allow: /
-Allow: /posts/
-Disallow: /about/
-Disallow: /archives/
+Allow: /home/
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+
 Disallow: /js/
 Disallow: /css/
-Disallow: /contact/
 Disallow: /fonts/
-Disallow: /friends/
-Disallow: /libs/
-Disallow: /medias/
-Disallow: /page/
-Disallow: /tags/
+Disallow: /vendors/
+Disallow: /fancybox/
 Disallow: /categories/
+
+Sitemap: https://blog.bestqliang.com/sitemap.xml
+Sitemap: https://blog.bestqliang.com/baidusitemap.xml
