@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.bestqliang.com/2018/06/20/centos-da-jian-softethervpn/</loc>
+    
+    <lastmod>2020-04-24T07:40:02.641Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.bestqliang.com/2019/01/17/er-wei-fu-wu-ke-hu-duan-fu-zai-jun-heng-zhi-ribbon/</loc>
     
     <lastmod>2020-04-09T07:30:29.528Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://blog.bestqliang.com/2019/01/21/san-wei-fu-wu-sheng-ming-shi-rest-diao-yong-zhi-feign/</loc>
     
     <lastmod>2020-04-09T07:30:23.647Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bestqliang.com/2018/06/27/vultr-neng-ping-dan-shi-ssh-wu-fa-lian-jie/</loc>
-    
-    <lastmod>2020-04-09T07:30:13.573Z</lastmod>
     
   </url>
   
@@ -54,13 +54,6 @@
     <loc>https://blog.bestqliang.com/2019/03/25/zhuang-pei-bean/</loc>
     
     <lastmod>2020-03-23T12:49:49.668Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bestqliang.com/2017/06/14/ban-ben-kong-zhi/</loc>
-    
-    <lastmod>2020-03-23T12:49:49.666Z</lastmod>
     
   </url>
   
@@ -177,13 +170,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bestqliang.com/2018/06/11/an-zhuang-zui-xin-nei-he-bing-kai-qi-bbr/</loc>
-    
-    <lastmod>2020-03-23T12:49:49.642Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.bestqliang.com/2019/01/23/si-wei-fu-wu-rong-cuo-chu-li-zhi-hystrix/</loc>
     
     <lastmod>2020-03-23T12:49:49.640Z</lastmod>
@@ -296,13 +282,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bestqliang.com/2018/06/11/shadowsock-da-jian/</loc>
-    
-    <lastmod>2020-03-23T12:49:49.613Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.bestqliang.com/2017/12/01/postgresql-fen-qu-biao/</loc>
     
     <lastmod>2020-03-23T12:49:49.612Z</lastmod>
@@ -352,20 +331,6 @@
   </url>
   
   <url>
-    <loc>https://blog.bestqliang.com/2018/03/20/java-zhong-de-ji-he-qu-bie/</loc>
-    
-    <lastmod>2020-03-23T12:49:49.606Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bestqliang.com/2018/06/20/centos-da-jian-softethervpn/</loc>
-    
-    <lastmod>2020-03-23T12:49:49.604Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.bestqliang.com/2019/03/26/bean-de-sheng-ming-zhou-qi/</loc>
     
     <lastmod>2020-03-23T12:49:49.603Z</lastmod>
@@ -411,13 +376,6 @@
     <loc>https://blog.bestqliang.com/2018/06/29/java-shi-xian-wu-xian-ji-fen-lei/</loc>
     
     <lastmod>2020-03-23T12:49:49.593Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.bestqliang.com/2017/06/10/git-chang-yong-ming-ling-su-cha/</loc>
-    
-    <lastmod>2020-03-23T12:49:49.590Z</lastmod>
     
   </url>
   

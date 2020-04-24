@@ -36,17 +36,13 @@ https://blog.bestqliang.com/2019/01/17/er-wei-fu-wu-ke-hu-duan-fu-zai-jun-heng-z
 https://blog.bestqliang.com/2019/01/15/yi-wei-fu-wu-zhu-ce-yu-fa-xian-zhi-eureka/
 https://blog.bestqliang.com/2018/07/18/xian-zhi-fu-wu-qi-gua-ebesucher/
 https://blog.bestqliang.com/2018/06/29/java-shi-xian-wu-xian-ji-fen-lei/
-https://blog.bestqliang.com/2018/06/27/vultr-neng-ping-dan-shi-ssh-wu-fa-lian-jie/
 https://blog.bestqliang.com/2018/06/20/centos-da-jian-softethervpn/
 https://blog.bestqliang.com/2018/06/19/visualstudiocode-tong-guo-ssh-yuan-cheng-bian-ji-wen-jian/
 https://blog.bestqliang.com/2018/06/18/centos-chong-jian-fu-wu-qi/
-https://blog.bestqliang.com/2018/06/11/an-zhuang-zui-xin-nei-he-bing-kai-qi-bbr/
-https://blog.bestqliang.com/2018/06/11/shadowsock-da-jian/
 https://blog.bestqliang.com/2018/06/02/shi-yong-jwt-wan-cheng-sso-dan-dian-deng-lu/
 https://blog.bestqliang.com/2018/05/18/ubuntu-ding-shi-bei-fen-shu-ju-ku-bing-fa-song-you-jian/
 https://blog.bestqliang.com/2018/05/18/docker-shu-ju-ku-bei-fen/
 https://blog.bestqliang.com/2018/03/28/vue-he-jquery-pei-he-shi-yong-chu-xian-de-wen-ti/
-https://blog.bestqliang.com/2018/03/20/java-zhong-de-ji-he-qu-bie/
 https://blog.bestqliang.com/2018/03/01/mycat-shi-jian/
 https://blog.bestqliang.com/2018/02/24/vue-dai-li/
 https://blog.bestqliang.com/2017/12/14/mysql-fen-qu/
@@ -56,5 +52,3 @@ https://blog.bestqliang.com/2017/10/23/mysql-cun-chu-guo-cheng/
 https://blog.bestqliang.com/2017/10/19/mysql-shi-jian/
 https://blog.bestqliang.com/2017/09/27/java-shu-ju-lei-xing/
 https://blog.bestqliang.com/2017/09/15/wu-xian-ji-fen-lei-shi-xian/
-https://blog.bestqliang.com/2017/06/14/ban-ben-kong-zhi/
-https://blog.bestqliang.com/2017/06/10/git-chang-yong-ming-ling-su-cha/
